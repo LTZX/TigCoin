@@ -898,7 +898,7 @@
                                 </items>
                             </navigationBar>
                             <tableView clipsSubviews="YES" alpha="0.0" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" bouncesZoom="NO" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelection="NO" rowHeight="50" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="fvr-ks-8dh">
-                                <rect key="frame" x="16" y="270" width="343" height="367"/>
+                                <rect key="frame" x="16" y="237" width="343" height="400"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="transCell" id="Eyi-O3-WlF" customClass="transCell" customModule="ECS189E" customModuleProvider="target">
@@ -995,7 +995,7 @@
                                 </constraints>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="No History Found" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oJM-aG-lOE">
-                                <rect key="frame" x="112" y="441.5" width="151.5" height="24"/>
+                                <rect key="frame" x="112" y="425" width="151.5" height="24"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
@@ -1005,7 +1005,7 @@
                         <constraints>
                             <constraint firstItem="luC-uc-l9F" firstAttribute="centerX" secondItem="2vA-tc-rVK" secondAttribute="centerX" id="0Os-QP-fRn"/>
                             <constraint firstItem="oJM-aG-lOE" firstAttribute="centerY" secondItem="fvr-ks-8dh" secondAttribute="centerY" id="0p1-QT-jy5"/>
-                            <constraint firstItem="fvr-ks-8dh" firstAttribute="height" secondItem="2vA-tc-rVK" secondAttribute="height" multiplier="0.55" id="2k3-I2-bpG"/>
+                            <constraint firstItem="fvr-ks-8dh" firstAttribute="height" secondItem="2vA-tc-rVK" secondAttribute="height" multiplier="0.6" id="2k3-I2-bpG"/>
                             <constraint firstItem="ROK-Nh-St5" firstAttribute="trailing" secondItem="fvr-ks-8dh" secondAttribute="trailing" constant="16" id="8vJ-Ok-AK0"/>
                             <constraint firstItem="RlT-km-Re0" firstAttribute="trailing" secondItem="ROK-Nh-St5" secondAttribute="trailing" id="AtR-Om-EMc"/>
                             <constraint firstItem="KVy-Ml-Lga" firstAttribute="trailing" secondItem="ROK-Nh-St5" secondAttribute="trailing" id="DcY-9Y-P2c"/>
