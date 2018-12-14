@@ -1,1 +1,2 @@
-# TigCoin
+# TigCoin - demo
+
