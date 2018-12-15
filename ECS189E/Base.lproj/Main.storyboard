@@ -286,7 +286,7 @@
                                         </connections>
                                     </button>
                                     <pickerView contentMode="scaleToFill" restorationIdentifier="toPicker" translatesAutoresizingMaskIntoConstraints="NO" id="Zdb-rg-ca4">
-                                        <rect key="frame" x="50.5" y="109" width="236" height="80"/>
+                                        <rect key="frame" x="33.5" y="109" width="270" height="80"/>
                                         <color key="tintColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="80" id="q9P-cM-xMh"/>
@@ -319,7 +319,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <pickerView contentMode="scaleToFill" restorationIdentifier="fromPicker" translatesAutoresizingMaskIntoConstraints="NO" id="nsJ-ls-tG0">
-                                        <rect key="frame" x="50.5" y="0.0" width="236" height="80"/>
+                                        <rect key="frame" x="33.5" y="0.0" width="270" height="80"/>
                                         <color key="tintColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="80" id="BFf-T4-qjY"/>
@@ -333,7 +333,7 @@
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstItem="nsJ-ls-tG0" firstAttribute="top" secondItem="LYu-Nk-FnY" secondAttribute="top" id="0A3-rF-J4k"/>
-                                    <constraint firstItem="nsJ-ls-tG0" firstAttribute="width" secondItem="LYu-Nk-FnY" secondAttribute="width" multiplier="0.7" id="2Yx-KY-gJl"/>
+                                    <constraint firstItem="nsJ-ls-tG0" firstAttribute="width" secondItem="LYu-Nk-FnY" secondAttribute="width" multiplier="0.8" id="2Yx-KY-gJl"/>
                                     <constraint firstItem="aX4-Ra-BbS" firstAttribute="centerX" secondItem="LYu-Nk-FnY" secondAttribute="centerX" id="3fK-cv-JIV"/>
                                     <constraint firstItem="nsJ-ls-tG0" firstAttribute="top" secondItem="LYu-Nk-FnY" secondAttribute="top" id="46S-WP-sjX"/>
                                     <constraint firstAttribute="bottom" secondItem="yKU-aQ-bFs" secondAttribute="bottom" id="6oa-Aj-eUL"/>
@@ -348,7 +348,7 @@
                                     <constraint firstItem="Zdb-rg-ca4" firstAttribute="centerX" secondItem="LYu-Nk-FnY" secondAttribute="centerX" id="bIA-7s-swY"/>
                                     <constraint firstItem="nsJ-ls-tG0" firstAttribute="centerX" secondItem="LYu-Nk-FnY" secondAttribute="centerX" id="iwU-xV-Bn1"/>
                                     <constraint firstItem="3tM-nz-QVN" firstAttribute="centerX" secondItem="LYu-Nk-FnY" secondAttribute="centerX" id="kda-Vj-Vru"/>
-                                    <constraint firstItem="Zdb-rg-ca4" firstAttribute="width" secondItem="LYu-Nk-FnY" secondAttribute="width" multiplier="0.7" id="oXr-7a-lyL"/>
+                                    <constraint firstItem="Zdb-rg-ca4" firstAttribute="width" secondItem="LYu-Nk-FnY" secondAttribute="width" multiplier="0.8" id="oXr-7a-lyL"/>
                                     <constraint firstItem="pia-6g-VyG" firstAttribute="top" secondItem="3tM-nz-QVN" secondAttribute="bottom" constant="15" id="qXk-Ey-wFI"/>
                                     <constraint firstItem="3tM-nz-QVN" firstAttribute="top" secondItem="Zdb-rg-ca4" secondAttribute="bottom" constant="15" id="su6-Mg-Gzf"/>
                                 </constraints>

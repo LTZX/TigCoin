@@ -54,7 +54,7 @@ class WalletViewController: UIViewController {
 //        dataInit(random: false, first: true)
         dataInit(random: true, first: true)
     }
-
+    
     func dataInit(random: Bool, first: Bool) {
         // Without Api
         self.wallet = Wallet.init(data: [:], ifGenerateAccounts: random)

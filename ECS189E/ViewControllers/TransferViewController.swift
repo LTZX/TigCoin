@@ -45,6 +45,47 @@ class TransferViewController: UIViewController, UIPickerViewDelegate, UIPickerVi
         }
     }
     
+    func recordTrans(amount: Double) {
+        let newTrans = Transaction.init(inputAmount: amount, inputType: transType, inputFrom: wallet.accounts[fromAccount].name, inputTo: wallet.accounts[toAccount].name, inputAccount: 0, inputWallet: 0)
+
+        switch transType {
+            case .deposit:
+                wallet.accounts[toAccount].amount += amount
+                wallet.totalAmount += amount
+                newTrans.from = "Magic place"
+                newTrans.currentAccount = wallet.accounts[toAccount].amount
+                wallet.accounts[toAccount].Ahistory.insert(newTrans, at: 0)
+            
+            case .withdraw:
+                wallet.accounts[fromAccount].amount -= amount
+                wallet.totalAmount -= newTrans.amount
+                newTrans.to = "Live"
+                newTrans.amount = -amount
+                newTrans.currentAccount = wallet.accounts[fromAccount].amount
+                wallet.accounts[fromAccount].Ahistory.insert(newTrans, at: 0)
+            
+            case .transfer:
+                wallet.accounts[fromAccount].amount -= amount
+                wallet.accounts[toAccount].amount += amount
+                newTrans.currentAccount = wallet.accounts[toAccount].amount
+                wallet.accounts[toAccount].Ahistory.insert(newTrans, at: 0)
+                newTrans.amount = -amount
+                newTrans.currentAccount = wallet.accounts[fromAccount].amount
+                wallet.accounts[fromAccount].Ahistory.insert(newTrans, at: 0)
+            
+            case .unknown:
+                print("recordTrans() unknown Error")
+        }
+        
+        newTrans.currentWallet = wallet.totalAmount
+        wallet.Whistory.insert(newTrans, at: 0)
+        
+        let vc = self.presentingViewController as! WalletViewController
+        vc.wallet = wallet
+        vc.viewUpdate()
+        dismiss(animated: true, completion: nil)
+    }
+    
     @IBAction func doneByButton(_ sender: UIButton) {
         
         if let input = amountTextField.text {
@@ -68,23 +109,19 @@ class TransferViewController: UIViewController, UIPickerViewDelegate, UIPickerVi
                     infoLabel.text = "Cannot transfer money between same account."
                     return
                 }
-    
-                if transType != TransType.deposit {
-                    wallet.accounts[fromAccount].amount -= amount
-                }
-                if transType != TransType.withdraw {
-                    wallet.accounts[toAccount].amount += amount
-                }
+
+                recordTrans(amount: amount)
+                
                 // Trans
-                Api.setAccounts(accounts: self.wallet.accounts) { (response, error) in
-                    guard error == nil else {
-                        print("Something wrong when setting accounts.")
-                        return
-                    }
-                    let dest = self.presentingViewController as! WalletViewController
-                    dest.dataInit(random: false, first: false)
-                    self.dismiss(animated: true, completion: nil)
-                } // Api
+//                Api.setAccounts(accounts: self.wallet.accounts) { (response, error) in
+//                    guard error == nil else {
+//                        print("Something wrong when setting accounts.")
+//                        return
+//                    }
+//                    let dest = self.presentingViewController as! WalletViewController
+//                    dest.dataInit(random: false, first: false)
+//                    self.dismiss(animated: true, completion: nil)
+//                } // Api
                 
             } // if amount
         } // if input valid
@@ -118,15 +155,15 @@ class TransferViewController: UIViewController, UIPickerViewDelegate, UIPickerVi
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
         if pickerView.restorationIdentifier == "fromPicker" {
             if transType == TransType.deposit {
-                return "Magic Place"
+                return "Magic Place: Infinity"
             } else {
-                return wallet.accounts[row].name
+                return wallet.accounts[row].name + ": " + Format.money(input: wallet.accounts[row].amount, withMark: false)
             }
         } else {
             if transType == TransType.withdraw {
-                return "Live"
+                return "Live: -Infinity"
             } else {
-                return wallet.accounts[row].name
+                return wallet.accounts[row].name + ": " + Format.money(input: wallet.accounts[row].amount, withMark: false)
             }
         }
     }
